@@ -30,12 +30,12 @@ Link para acessar: http://localhost:8080/index.jsf
 ## Imagens do Sistema
 
 ### Página inicial (Listagem das notas ativas)
-![enter image description here]([https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web1.png](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web1.png))
+![enter image description here](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web1.png%5D%28https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web1.png)
 
 ### Listagem de notas concluídas
-![enter image description here]([https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web2.png](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web2.png))
+![enter image description here](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web2.png%5D%28https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web2.png)
 ### Mobile 
-![enter image description here]([[https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png)))
+![enter image description here](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png%5D%28https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png)
 ---------ITENS CUMPRIDOS---------------
 C. Utilizar Hibernate e JPA  
 D. Utilizar Spring Framework Boot 2.0  
