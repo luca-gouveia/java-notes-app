@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions" >
+<h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Java Notes App | Luca Gouveia</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap -->
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!-- FontAwesome -->
+    <style type="text/css">
+        @import url(#{facesContext.externalContext.request.contextPath}/resources/css/style.css);
+
+        .ui-paginator.ui-paginator-top, .ui-datagrid .ui-datagrid-header{
+            display: none;
+        }
+        .ui-grid-responsive{
+            border: none;
+        }
+        .ui-panel .ui-panel-titlebar{
+            background-color: transparent;
+            border: none;
+        }
+        .ui-grid-responsive{
+            margin: 3em 0;
+        }
+        td{
+            word-break: break-word;
+        }
+        .ui-panel:hover{
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+            transition: 0.35s;
+        }
+        .ui-panel{
+            height: 210px;
+            transition: 0.35s;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+        }
+        .ui-panel:hover #done {
+            display: block;
+        }
+        .ui-paginator.ui-paginator-bottom{
+            display: none;
+        }
+        #activeNotes{
+            position: absolute;
+            margin-top: -2px;
+            margin-left: 28px;
+        }
+        #doneNotes{
+            position: absolute;
+            margin-top: -1px;
+            margin-left: -25px;
+        }
+    </style>
+</h:head>
+<body>
+    <h:form id="idForm">
+        <nav class="navbar navbar-light bg-light">
+            <h:commandLink action="#{noteController.showActives()}" data-toggle="tooltip" title="Listar Ativos">
+                <span id="activeNotes">#{fn:length(noteController.notes)}</span>
+                <i class='fa fa-list'></i>
+                <f:ajax render="idForm"></f:ajax>
+            </h:commandLink>
+
+            <h:commandLink action="#{noteController.showDone()}" data-toggle="tooltip" title="Listar Concluídos">
+                <span id="doneNotes">#{fn:length(noteController.notesDone)}</span>
+                <i class='fa fa-check-circle'></i>
+                <f:ajax render="idForm"></f:ajax>
+            </h:commandLink>
+        </nav>
+        <h:panelGroup layout="block" rendered="#{noteController.edit == false}" onclick="$('#create-note-on').css('display', 'block'); $('#create-note').css('display', 'none');">
+            <div id="create-note" >
+                <div>Criar uma nota...
+                    <i class="fa fa-plus-square"></i>
+                </div>
+            </div>
+        </h:panelGroup>
+        <h:panelGroup layout="block" >
+            <div id="create-note-on" class="create-note-on">
+                <div>
+                    <h:inputText value="#{noteController.note.title}" a:placeholder="Título"/> <br/>
+                    <h:inputTextarea value="#{noteController.note.body}" a:placeholder="Criar uma nota..."  a:maxlength="220"/>
+                    <br/><br/>
+                    <h:selectOneMenu value = "#{noteController.note.color}">
+                        <f:selectItem itemValue = "#fff" itemLabel = "Branco" />
+                        <f:selectItem itemValue = "#fff475" itemLabel = "Amarelo" />
+                        <f:selectItem itemValue = "#f28b82" itemLabel = "Vermelho" />
+                    </h:selectOneMenu>
+                    <h:commandButton action="#{noteController.save}" value="Salvar" styleClass="btn sendBtn"  type="submit">
+                        <f:ajax execute="@form" render="@form"/>
+                    </h:commandButton>
+                    <h:commandButton action="#{noteController.cancelEdit()}" value="Cancelar" styleClass="btn btn-danger" >
+                        <f:ajax execute="idForm" render="idForm"/>
+                    </h:commandButton>
+                </div>
+            </div>
+        </h:panelGroup>
+        <h:panelGroup layout="block" rendered="#{noteController.edit == true}" >
+            <div class="create-note-on">
+                <div>
+                    <h:inputText value="#{noteController.note.title}" a:placeholder="Título"/> <br/>
+                    <h:inputTextarea value="#{noteController.note.body}" a:placeholder="Criar uma nota..."  a:maxlength="220"/>
+                    <br/><br/>
+                    <h:selectOneMenu value = "#{noteController.note.color}">
+                        <f:selectItem itemValue = "#fff" itemLabel = "Branco" />
+                        <f:selectItem itemValue = "#fff475" itemLabel = "Amarelo" />
+                        <f:selectItem itemValue = "#f28b82" itemLabel = "Vermelho" />
+                    </h:selectOneMenu>
+                    <h:commandButton action="#{noteController.save}" value="Salvar" styleClass="btn sendBtn" type="submit">
+                        <f:ajax execute="idForm" render="idForm"/>
+                    </h:commandButton>
+                    <h:commandButton action="#{noteController.cancelEdit()}" value="Cancelar" styleClass="btn btn-danger" >
+                        <f:ajax execute="idForm" render="idForm"/>
+                    </h:commandButton>
+                </div>
+            </div>
+        </h:panelGroup>
+
+        <h:panelGroup rendered="#{noteController.showNotesDone == true}">
+            <p:dataGrid rendered="#{noteController.notesDone != []}" var="n" value="#{noteController.notesDone}" rows="32"  columns="4" layout="grid"
+                        paginator="true" id="notes-list2"
+                        paginatorTemplate=" {FirstPageLink}  {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+                        rowsPerPageTemplate="12,16,32">
+                <p:panel header="#{n.title}" style="text-align:left; background-color: #{n.color}" rendered="#{n.state == true}">
+                    <h:panelGrid columns="1" style="width:100%; height: 100px">
+                        <h:outputText rendered="#{fn:length(n.body) lt 110}" class="bodytext" value="#{n.body}" />
+                        <h:outputText rendered="#{fn:length(n.body) gt 110}" class="bodytext" value="#{n.body.substring(0,110)}..." />
+                    </h:panelGrid>
+
+                    <h:panelGroup >
+                        <div id="done" >
+                            <ul>
+                                <li>
+                                    <h:commandLink action="#{noteController.changeState(n)}" data-toggle="tooltip" title="Marcar como concluída!">
+                                        <i class='fa fa-check-circle'></i>
+                                        <f:ajax render="idForm"></f:ajax>
+                                    </h:commandLink>
+                                </li>
+                                <li>
+                                    <h:commandLink action="#{noteController.delete(n)}" data-toggle="tooltip" title="Apagar">
+                                        <i class='fa fa-trash'></i>
+                                        <f:ajax render="idForm"></f:ajax>
+                                    </h:commandLink>
+                                </li>
+                                <li>
+                                    <h:commandLink action="#{noteController.edit(n)}" data-toggle="tooltip" title="Editar">
+                                        <i class='fa fa-pencil-square'></i>
+                                        <f:ajax render="idForm"></f:ajax>
+                                    </h:commandLink>
+                                </li>
+                            </ul>
+                        </div>
+                    </h:panelGroup>
+                </p:panel>
+
+                <p:panel header="#{n.title}" style="background-color: #{n.color};text-align:left;text-decoration: line-through;filter: brightness(93%);" rendered="#{n.state == false}">
+                    <h:panelGrid columns="1" style="width:100%; height: 100px">
+                        <h:outputText rendered="#{fn:length(n.body) lt 110}" class="bodytext" value="#{n.body}" />
+                        <h:outputText rendered="#{fn:length(n.body) gt 110}" class="bodytext" value="#{n.body.substring(0,110)}..." />
+                    </h:panelGrid>
+
+                    <h:panelGroup >
+                        <div id="done" style="display: block" >
+                            <ul>
+                                <li>
+                                    <h:commandLink action="#{noteController.changeState(n)}" data-toggle="tooltip" title="Desmarcar concluída!">
+                                        <i class='fa fa-minus-circle'></i>
+                                        <f:ajax render="idForm" ></f:ajax>
+                                    </h:commandLink>
+                                </li>
+                                <li>
+                                    <h:commandLink action="#{noteController.delete(n)}" data-toggle="tooltip" title="Apagar">
+                                        <i class='fa fa-trash'></i>
+                                        <f:ajax render="idForm"></f:ajax>
+                                    </h:commandLink>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </h:panelGroup>
+                </p:panel>
+    <!--            #{noteController.edit == true}-->
+            </p:dataGrid>
+        </h:panelGroup>
+
+        <h:panelGroup rendered="#{noteController.showNotesDone == false}">
+            <p:dataGrid rendered="#{noteController.notes != []}" var="n" value="#{noteController.notes}" rows="32"  columns="4" layout="grid"
+                        paginator="true" id="notes-list"
+                        paginatorTemplate=" {FirstPageLink}  {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+                        rowsPerPageTemplate="12,16,32">
+                <p:panel header="#{n.title}" style="text-align:left; background-color: #{n.color}" rendered="#{n.state == true}">
+                    <h:panelGrid columns="1" style="width:100%; height: 100px">
+                        <h:outputText rendered="#{fn:length(n.body) lt 110}" class="bodytext" value="#{n.body}" />
+                        <h:outputText rendered="#{fn:length(n.body) gt 110}" class="bodytext" value="#{n.body.substring(0,110)}..." />
+                    </h:panelGrid>
+
+                    <h:panelGroup >
+                        <div id="done" >
+                            <ul>
+                                <li>
+                                    <h:commandLink action="#{noteController.changeState(n)}" data-toggle="tooltip" title="Marcar como concluída!">
+                                        <i class='fa fa-check-circle'></i>
+                                        <f:ajax render="idForm"></f:ajax>
+                                    </h:commandLink>
+                                </li>
+                                <li>
+                                    <h:commandLink action="#{noteController.delete(n)}" data-toggle="tooltip" title="Apagar">
+                                        <i class='fa fa-trash'></i>
+                                        <f:ajax render="idForm"></f:ajax>
+                                    </h:commandLink>
+                                </li>
+                                <li>
+                                    <h:commandLink action="#{noteController.edit(n)}" data-toggle="tooltip" title="Editar">
+                                        <i class='fa fa-pencil-square'></i>
+                                        <f:ajax render="idForm"></f:ajax>
+                                    </h:commandLink>
+                                </li>
+                            </ul>
+                        </div>
+                    </h:panelGroup>
+                </p:panel>
+
+                <p:panel header="#{n.title}" style="background-color: #{n.color};text-align:left;text-decoration: line-through;filter: brightness(93%);" rendered="#{n.state == false}">
+                    <h:panelGrid columns="1" style="width:100%; height: 100px">
+                        <h:outputText rendered="#{fn:length(n.body) lt 110}" class="bodytext" value="#{n.body}" />
+                        <h:outputText rendered="#{fn:length(n.body) gt 110}" class="bodytext" value="#{n.body.substring(0,110)}..." />
+                    </h:panelGrid>
+
+                    <h:panelGroup >
+                        <div id="done" style="display: block" >
+                            <ul>
+                                <li>
+                                    <h:commandLink action="#{noteController.changeState(n)}" data-toggle="tooltip" title="Desmarcar concluída!">
+                                        <i class='fa fa-minus-circle'></i>
+                                        <f:ajax render="idForm" ></f:ajax>
+                                    </h:commandLink>
+                                </li>
+                                <li>
+                                    <h:commandLink action="#{noteController.delete(n)}" data-toggle="tooltip" title="Apagar">
+                                        <i class='fa fa-trash'></i>
+                                        <f:ajax render="idForm"></f:ajax>
+                                    </h:commandLink>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </h:panelGroup>
+                </p:panel>
+    <!--            #{noteController.edit == true}-->
+            </p:dataGrid>
+        </h:panelGroup>
+
+    </h:form>
+</body>
+</html>
