@@ -38,7 +38,7 @@ Link para acessar: http://localhost:8080/index.jsf
 ![enter image description here](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png%5D%28https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png)
 
 
-____________Itens Cumpridos__________________
+____________Itens Cumpridos__________________<br>
 A + B <br>
 C. Utilizar Hibernate e JPA<br>
 D. Utilizar Spring Framework Boot 2.0<br>
