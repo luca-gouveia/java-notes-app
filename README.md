@@ -39,7 +39,8 @@ Link para acessar: http://localhost:8080/index.jsf
 
 
 ---------ITENS CUMPRIDOS--------------- <br>
-
+A + B
+--- <br>
 C. Utilizar Hibernate e JPA  
 D. Utilizar Spring Framework Boot 2.0  
 F. Utilizar Bootstrap 4  
