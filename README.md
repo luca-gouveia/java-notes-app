@@ -38,12 +38,12 @@ Link para acessar: http://localhost:8080/index.jsf
 ![enter image description here](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png%5D%28https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png)
 
 
----------ITENS CUMPRIDOS--------------- <br>
-A + B
---- <br>
-C. Utilizar Hibernate e JPA  
-D. Utilizar Spring Framework Boot 2.0  
-F. Utilizar Bootstrap 4  
-G. Utilizar Primefaces  
-H. Utilizar testes de unidades  
-J. Publicar projeto no heroku
+____________Itens Cumpridos__________________
+A + B 
+C. Utilizar Hibernate e JPA
+D. Utilizar Spring Framework Boot 2.0
+F. Utilizar Bootstrap 4
+G. Utilizar Primefaces
+H. Utilizar testes de unidades
+J. Publicar projeto no heroku 
+___________________________________________
