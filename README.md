@@ -39,10 +39,11 @@ Link para acessar: http://localhost:8080/index.jsf
 
 
 ____________Itens Cumpridos__________________<br>
-A + B <br>
-C. Utilizar Hibernate e JPA<br>
-D. Utilizar Spring Framework Boot 2.0<br>
-F. Utilizar Bootstrap 4<br>
-G. Utilizar Primefaces<br>
-H. Utilizar testes de unidades<br>
-J. Publicar projeto no heroku 
+A.<br>
+B. <br>
+C. <br>
+D. <br>
+F. <br>
+G. <br>
+H. <br>
+J. 
