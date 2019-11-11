@@ -11,7 +11,8 @@
     <groupId>com.gouveia</groupId>
     <artifactId>javanotesapp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
+
     <name>javanotesapp</name>
     <description>Note application | Spring Boot + JSF</description>
 

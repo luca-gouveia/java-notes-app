@@ -1,5 +1,5 @@
-/home/luca/IdeaProjects/javanotesapp/src/main/java/com/gouveia/javanotesapp/controller/NoteController.java
-/home/luca/IdeaProjects/javanotesapp/src/main/java/com/gouveia/javanotesapp/repository/NoteRepository.java
-/home/luca/IdeaProjects/javanotesapp/src/main/java/com/gouveia/javanotesapp/JavanotesappApplication.java
-/home/luca/IdeaProjects/javanotesapp/src/main/java/com/gouveia/javanotesapp/model/Note.java
-/home/luca/IdeaProjects/javanotesapp/src/main/java/com/gouveia/javanotesapp/ServletInitializer.java
+/home/luca/Área de Trabalho/java-notes-app (cópia)/src/main/java/com/gouveia/javanotesapp/repository/NoteRepository.java
+/home/luca/Área de Trabalho/java-notes-app (cópia)/src/main/java/com/gouveia/javanotesapp/controller/NoteController.java
+/home/luca/Área de Trabalho/java-notes-app (cópia)/src/main/java/com/gouveia/javanotesapp/JavanotesappApplication.java
+/home/luca/Área de Trabalho/java-notes-app (cópia)/src/main/java/com/gouveia/javanotesapp/ServletInitializer.java
+/home/luca/Área de Trabalho/java-notes-app (cópia)/src/main/java/com/gouveia/javanotesapp/model/Note.java

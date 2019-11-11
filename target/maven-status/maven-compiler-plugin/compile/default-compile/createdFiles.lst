@@ -1,0 +1,5 @@
+com/gouveia/javanotesapp/JavanotesappApplication.class
+com/gouveia/javanotesapp/repository/NoteRepository.class
+com/gouveia/javanotesapp/ServletInitializer.class
+com/gouveia/javanotesapp/controller/NoteController.class
+com/gouveia/javanotesapp/model/Note.class
