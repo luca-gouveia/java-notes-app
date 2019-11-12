@@ -3,7 +3,7 @@
  # java-notes-app
 Aplicativo de notas.
 
- *Nesse projeto foi usado Spring Boot 2, Maven, PostgreSQL, Bootstrap 4, JSF, PrimeFaces, JUnit, Hibernate e JPA.*
+ *Neste projeto foi usado Spring Boot 2, Maven, PostgreSQL, Bootstrap 4, JSF, PrimeFaces, JUnit, Hibernate e JPA.*
 
 O **java-notes-app** consiste em um app web de notas, onde é possível criar uma nota com um Título, uma Descrição e uma Cor. Depois de criada, pode-se mudar a cor, título e o próprio corpo da nota. Podemos também marcar uma nota como concluída, fazendo-a sair da listagem de notas ativas e ir para a listagem de notas concluídas. (Existe um contador de notas para cada uma das listagens)
 
