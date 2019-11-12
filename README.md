@@ -30,12 +30,12 @@ Link para acessar: http://localhost:8080/index.jsf
 ## Imagens do Sistema
 
 ### Página inicial (Listagem das notas ativas)
-![enter image description here](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web1.png%5D%28https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web1.png)
+![Listagem Ativos](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web1.png%5D%28https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web1.png)
 
 ### Listagem de notas concluídas
-![enter image description here](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web2.png%5D%28https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web2.png)
+![Listagem Concluídos](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web2.png%5D%28https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/web2.png)
 ### Mobile 
-![enter image description here](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png%5D%28https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png)
+![Mobile](https://raw.githubusercontent.com/luca-gouveia/java-notes-app/master/images/mobile.png)
 
 
 ____________Itens Cumpridos__________________<br>
